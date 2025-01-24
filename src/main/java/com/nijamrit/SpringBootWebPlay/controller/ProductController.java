@@ -42,6 +42,7 @@ public class ProductController {
     @PostMapping("/product")
     public Product addProduct(@RequestBody Product product) {
         System.out.println("Received product (to Add) on Product Controller: " + product);
+        // Note: multiple products when not given id, are unable to save more than 1 product because of primary key conflict
         return service.addProduct(product);
     }
 }
