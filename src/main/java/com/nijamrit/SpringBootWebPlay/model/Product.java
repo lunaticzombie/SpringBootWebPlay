@@ -5,6 +5,8 @@ import org.springframework.stereotype.Component;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Component
@@ -12,6 +14,7 @@ import jakarta.persistence.Id;
 public class Product {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int prodId;
     private String prodName;
     private int price;
