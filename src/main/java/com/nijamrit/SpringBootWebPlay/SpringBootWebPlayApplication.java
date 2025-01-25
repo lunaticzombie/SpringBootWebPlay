@@ -19,6 +19,9 @@ public class SpringBootWebPlayApplication {
 			// either create a new session everytime, or create CSRF token that can be used multiple times
 			// name=_csrf type="hidden" value=<token> (Note: it is required when sending update add delete type of request)
 			// create config class (@Configuration + @EnableWebSecurity) and define @Bean in it to inject object, to create your own filter chain of security
+		// JWT (JSON (Javascript Object Notation) Web Token) for accountability (not secrecy). at login a token is generated, and then each subsequent request can use that token to validate user
+		// Add JJWT API and Impl dependency
+		// Add OAuth2 Client (other one is to create your own OAuth) dependency for implementing Authorization from third party like Google, Github etc..
 		// Then create a Repository layer by creating an interface that extends JpaRepository<Product, Integer>, Product is th Class used for schema and second arg is Primary key
 		// Then in Product add @Entity and @Id, This would create a table in h2 DB
 		SpringApplication.run(SpringBootWebPlayApplication.class, args);
